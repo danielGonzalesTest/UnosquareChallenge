@@ -28,7 +28,6 @@ build/
 gradle/
 target/
 gradlew
-gradlew.bat
 gradle.bat
 .DS_Store
 chromedriver
@@ -45,3 +44,4 @@ chromedriver
 /.allure/
 *.DS_Store
 debug.log
+/reports/
