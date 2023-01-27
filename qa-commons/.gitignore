@@ -28,7 +28,6 @@ build/
 gradle/
 target/
 gradlew
-gradlew.bat
 gradle.bat
 .DS_Store
 chromedriver
