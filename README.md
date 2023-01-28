@@ -1,24 +1,24 @@
 # Unosquare Challenge
 
+Use the following command to run the tests:
+```
+~gradle clean runWeb
+```
+
 This is a modularized project of WEB UI testing and API testing.
 
 Where the API module is being consumed in order to obtain information that will be used in UI tests.
 
 For more information, you can review more information in the README file of each module.
 
-qa-web/README.md
+ * qa-web/README.md
 
-qa-api/README.md
+ * qa-api/README.md
 
 Basic tips:
 
 # JAVA
 Java required: 11
-
-You can download it from [here](https://www.oracle.com/java/technologies/javase/jdk11-archive-downloads.html)
-* It may be necessary to install Rosetta to continue with the Java 11 installation.
-
-* Rosetta enables Intel-based features to run on Apple Silicon Macs.
 
 To validate that you have java installed, open terminal and execute
 
