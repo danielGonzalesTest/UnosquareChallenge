@@ -26,9 +26,9 @@ Feature: Basic Validations on Amazon.com
     And I click on Start here on menu displayed
     # Create Account Page
     When I fill out the following fields on Create Account form:
-      | FIELD                  | VALUE                       |
-      | Your Name              | testName                    |
-      | Mobile number or email | Firstname.Lastname@fake.com |
+      | FIELD                  | VALUE                      |
+      | Your Name              | user.employeeName          |
+      | Mobile number or email | user.employeeName@fake.com |
     And I click on Conditions of Use
     # Conditions of Use Page
     When I search "Echo" on Find more solutions
