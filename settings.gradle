@@ -1,4 +1,5 @@
 rootProject.name = 'UnosquareChallenge'
 include 'qa-web'
 include 'qa-commons'
+include 'qa-api'
 

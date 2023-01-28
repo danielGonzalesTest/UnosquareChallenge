@@ -1,0 +1,29 @@
+plugins {
+    id "io.qameta.allure" version "2.9.6"
+}
+def timeStampVal = getDate().toString()
+
+allure {
+    version = '2.13.8'
+}
+dependencies {
+    implementation project(":qa-commons")
+    implementation group: 'io.rest-assured', name: 'rest-assured', version: '4.3.3'
+}
+
+configurations {
+    cucumberRuntime {
+        extendsFrom testRuntimeOnly
+    }
+}
+
+task runAPI(type: Test) {
+    useTestNG()
+    options {
+        jvmArgs = ["-Dcucumber.filter.tags=" + tags + " and not @Deprecated"]
+    }
+    // Flag to show console output.
+    testLogging.showStandardStreams = true
+    // Flag to scan for classes with @Test annotation.
+    scanForTestClasses = false
+}
