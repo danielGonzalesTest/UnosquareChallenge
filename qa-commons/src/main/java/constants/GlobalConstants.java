@@ -33,7 +33,9 @@ public final class GlobalConstants {
         if (GLOBALCONSTANTSMAP.size() == 0) {
             initSLConstants();
         }
-        return GLOBALCONSTANTSMAP.get(key);
+        String value = GLOBALCONSTANTSMAP.get(key);
+        LOGGER.info(String.format("Recovered data: [%s, %s]", key, value));
+        return value;
     }
 
     /**
