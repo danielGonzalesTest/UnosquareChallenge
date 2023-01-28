@@ -49,5 +49,5 @@ To launch the web UI project, use the following command:
 
 Current Browsers supported:
 
-##Chrome
+## Chrome
 This framework downloads the Chrome selenium webDriver automatically according to the version of chrome you have installed.~~**~~**
