@@ -32,6 +32,6 @@ public class NavBarPage extends BasePage {
     }
 
     public void clickStartHereOnMenu(){
-        CommonInteractions.getWebElementWithCss("#nav-flyout-ya-newCust a");
+        CommonInteractions.click(CommonInteractions.getWebElementWithCss("#nav-flyout-ya-newCust a"));
     }
 }

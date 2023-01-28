@@ -1,14 +1,14 @@
 package us.challenge.step_definitions.core;
 
 import io.cucumber.java.en.Then;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.testng.Assert;
 import us.challenge.manage_page.BasePage;
 import us.challenge.manage_page.SupportForAmazonEchoPage;
 
+import java.util.List;
+
 public class SupportForAmazonPageSteps extends BasePage {
 
-    private static final Logger LOGGER = LogManager.getLogger(SupportForAmazonPageSteps.class.getSimpleName());
     private SupportForAmazonEchoPage supportForAmazonEchoPage;
 
     public SupportForAmazonPageSteps(final SupportForAmazonEchoPage supportForAmazonEchoPage) {
@@ -16,6 +16,8 @@ public class SupportForAmazonPageSteps extends BasePage {
     }
 
     @Then("The following elements should be displayed:")
-    public void theFollowingElementsShouldBeDisplayed() {
+    public void theFollowingElementsShouldBeDisplayed(List<String> expectedList) {
+        List<String> actualElements = this.supportForAmazonEchoPage.getSectionsList();
+        Assert.assertEquals(actualElements, expectedList, "Found list: " + actualElements);
     }
 }

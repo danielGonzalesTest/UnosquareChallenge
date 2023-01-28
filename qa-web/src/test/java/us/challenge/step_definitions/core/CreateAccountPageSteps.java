@@ -1,15 +1,16 @@
 package us.challenge.step_definitions.core;
 
+import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.When;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import us.challenge.manage_page.BasePage;
 import us.challenge.manage_page.CreateAccountPage;
 
+import java.util.List;
+import java.util.Map;
+
 public class CreateAccountPageSteps extends BasePage {
 
-    private static final Logger LOGGER = LogManager.getLogger(CreateAccountPageSteps.class.getSimpleName());
     private CreateAccountPage createAccountPage;
 
     public CreateAccountPageSteps(final CreateAccountPage createAccountPage) {
@@ -17,12 +18,15 @@ public class CreateAccountPageSteps extends BasePage {
     }
 
     @When("I fill out the following fields on Create Account form:")
-    public void iFillOutTheFollowingFieldsOnCreateAccountForm() {
-        
+    public void iFillOutTheFollowingFieldsOnCreateAccountForm(final DataTable table) {
+        List<Map<String, String>> dataToFill = table.asMaps(String.class, String.class);
+        for (Map<String, String> rowMap : dataToFill) {
+            this.createAccountPage.fillFieldWithValue(rowMap.get("FIELD"), rowMap.get("VALUE"));
+        }
     }
 
     @And("I click on Conditions of Use")
     public void iClickOnConditionsOfUse() {
-
+        this.createAccountPage.clickOnConditionsOfUse();
     }
 }

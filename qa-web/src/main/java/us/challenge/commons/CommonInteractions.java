@@ -8,6 +8,9 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class CommonInteractions {
     private static final Logger LOGGER = LogManager.getLogger(CommonInteractions.class.getSimpleName());
 
@@ -71,5 +74,22 @@ public class CommonInteractions {
 
     public static void waitUntilClickable(final WebElement element){
         wait.until(ExpectedConditions.elementToBeClickable(element));
+    }
+
+    public static void sendKeysEnter(WebElement webElement) {
+        webElement.sendKeys(Keys.ENTER);
+    }
+
+    public static WebElement getWebElementWithXpath(final String xpath) {
+        return driver.findElement(By.xpath(xpath));
+    }
+
+    public static List<String> getListStringForAllElements(final List<WebElement> webElements) {
+        List<String> myList = new ArrayList<>();
+        for (WebElement element : webElements) {
+            myList.add(element.getText().trim());
+        }
+
+        return myList;
     }
 }
