@@ -8,6 +8,7 @@ allure {
 
 dependencies {
     implementation project(":qa-commons")
+    implementation project(":qa-api")
 
     // selenium-java
     implementation group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '4.0.0'
